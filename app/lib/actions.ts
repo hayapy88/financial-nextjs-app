@@ -15,6 +15,7 @@ const FormSchema = z.object({
   date: z.string(),
 });
 
+// CreateInvoice schema omits id and date fields
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
 export async function createInvoice(formData: FormData) {
@@ -35,6 +36,7 @@ export async function createInvoice(formData: FormData) {
   redirect("/dashboard/invoices");
 }
 
+// UpdateInvoice schema is the same as CreateInvoice but without id and date
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
 export async function updateInvoice(id: string, formData: FormData) {

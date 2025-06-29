@@ -7,6 +7,7 @@ import postgres from "postgres";
 
 const sql = postgres(process.env.POSGRES_URL!, { ssl: "require" });
 
+// Define the schema for the invoice form using zod
 const FormSchema = z.object({
   id: z.string(),
   customerId: z.string(),
